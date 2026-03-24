@@ -9,7 +9,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <PlasmicRootProvider Head={Head} Link={Link}>
       {/* GTM is placed here so it loads on every page */}
-      <GoogleTagManager gtmId="GTM-XYZ" />
+      <GoogleTagManager gtmId="GTM-MPZZC7XZ" />
       <Component {...pageProps} />
     </PlasmicRootProvider>
   );
