@@ -4,23 +4,12 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import Link from "next/link";
 import { GoogleTagManager } from '@next/third-parties/google'
- 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en">
-      <GoogleTagManager gtmId="GTM-XYZ" />
-      <body>{children}</body>
-    </html>
-  )
-}
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <PlasmicRootProvider Head={Head} Link={Link}>
+      {/* GTM is placed here so it loads on every page */}
+      <GoogleTagManager gtmId="GTM-XYZ" />
       <Component {...pageProps} />
     </PlasmicRootProvider>
   );
